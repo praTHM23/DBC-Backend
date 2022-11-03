@@ -5,10 +5,10 @@ const bcrypt=require('bcrypt');
 const UserSchema =  mongoose.Schema({
   username: { type: String, required: true },
   // profile_pic:{type: String},
-  contact: { type: String, required: true},
+  // contact: { type: String, required: true},
   password:{type:String,required:true},
   email: { type: String, required: true },
-  id_card: String,
+  // id_card: String,
   college: String,
   rating: String
 

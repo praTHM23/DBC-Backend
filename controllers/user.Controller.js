@@ -89,10 +89,10 @@ userRouter.get("/", async(req, res) => {
 
   userRouter.post("/", async(req, res,next) => {
     try {
-      console.log(req.body)
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        resource_type: "auto"
-      })
+      // console.log(req.body)
+      // const result = await cloudinary.uploader.upload(req.file.path, {
+      //   resource_type: "auto"
+      // })
 
       let user = await new User({
         username: req.body.username,
@@ -100,7 +100,7 @@ userRouter.get("/", async(req, res) => {
         // contact: req.body.contact,
         password: req.body.password,
         email: req.body.email,
-        id_card: result.secure_url,
+        // id_card: result.secure_url,
         college: req.body.college,
         rating: req.body.rating
       }); // to get the user having the specified id from the database
