@@ -1,9 +1,26 @@
-//routes goes here
+// const express=require('express')
+
+// const userRouter=require('../routes/user.routes')
+
+// const router=express.Router()
+
+// router.use('/user',userRouter)
+// module.exports=userRouter
+
 const express = require("express");
-const userRouter= require("../controllers/user.Controller.js") ;
+const router=express.Router()
+const userRouter= require("../controllers/user.Controller") ;
+const messageRouter= require("../controllers/message.Controller") ;
+const conversationRouter= require("../controllers/conversation.Controller") ;
 
-const routes = express.Router();
-routes.use("/user", userRouter);
 
 
-module.exports= routes;
+
+
+router.use("/user", userRouter);
+router.use("/message",messageRouter);
+router.use("/conversation", conversationRouter);
+
+
+
+module.exports=router

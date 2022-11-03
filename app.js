@@ -1,7 +1,7 @@
-const bodyParser = require("body-parser");
 const express = require("express");
+const bodyParser = require("body-parser");
 const {connectDB} = require("./config/db.js");
-const routes =require( "./routes/index.js"); 
+const router=require('./routes/index')
 
 const app = express();
 
@@ -10,12 +10,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(routes);
+
 
 app.get("/", (req, res) => {
   res.send("I'm Working!!");
 });
-
+app.use(router)
 const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
