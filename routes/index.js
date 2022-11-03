@@ -18,7 +18,8 @@ const postRouter=require('../controllers/post.Controller')
 
 
 
-router.use("/user", userRouter);
+router.use("/user", upload.single('id_card'),userRouter);
+
 router.use("/message",messageRouter);
 router.use("/conversation", conversationRouter);
 router.use('/post',upload.single('photo'),postRouter)

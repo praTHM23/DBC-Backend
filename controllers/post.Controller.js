@@ -37,11 +37,11 @@ const cloudinary=require('../utils/cloudinary')
         const result= await cloudinary.uploader.upload(req.file.path,{
             resource_type: "auto"
         })
-
+        console.log(result)
       let post = await new Post({
         user_id:req.body.user_id,
         title:req.body.title,
-        photo:result.secure_url,
+        photo:result.url,
         description:req.body.description,
         category:req.body.category,
         price:req.body.price
