@@ -15,7 +15,7 @@ messageRouter.post("/", async(req, res) => {
     }
 });
 
-messageRouter.get("/", async(req, res) => {
+messageRouter.get("/:id", async(req, res) => {
 
     try {
         const messages = await Message.find({
